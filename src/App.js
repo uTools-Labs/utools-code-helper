@@ -1,5 +1,5 @@
 import React from 'react'
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
+import { createTheme, ThemeProvider } from '@mui/material/styles'
 import Timestamp from './Timestamp'
 import Uuid from './Uuid'
 import Hash from './Hash'
@@ -12,35 +12,35 @@ import Hex from './Hex'
 import HtmlEscape from './HtmlEscape'
 
 window.platform = {
-  isMacOs: window.utools.isMacOs(),
+  isMacOS: window.utools.isMacOS(),
   isWindows: window.utools.isWindows(),
   isLinux: window.utools.isLinux()
 }
 
 const themeDic = {
-  light: createMuiTheme({
+  light: createTheme({
     palette: {
-      type: 'light'
-    },
-    props: {
-      MuiButtonBase: {
-        disableRipple: true
+      mode: 'light',
+      primary: {
+        main: '#3f51b5'
+      },
+      secondary: {
+        main: '#f50057'
       }
     }
   }),
-  dark: createMuiTheme({
+  dark: createTheme({
     palette: {
-      type: 'dark',
+      mode: 'dark',
       primary: {
         main: '#90caf9'
       },
       secondary: {
         main: '#f48fb1'
-      }
-    },
-    props: {
-      MuiButtonBase: {
-        disableRipple: true
+      },
+      background: {
+        default: '#303133',
+        paper: '#303133'
       }
     }
   })
@@ -64,7 +64,7 @@ export default class App extends React.Component {
       this.setState({ theme: e.matches ? 'dark' : 'light' })
     })
     window.addEventListener('keydown', e => {
-      if (/^Digit([1-9])$/.test(e.code) && (window.platform.isMacOs ? e.metaKey : e.altKey)) {
+      if (/^Digit([1-9])$/.test(e.code) && (window.platform.isMacOS ? e.metaKey : e.altKey)) {
         e.stopPropagation()
         e.preventDefault()
         this.setState({ copyIndex: [parseInt(RegExp.$1)] })

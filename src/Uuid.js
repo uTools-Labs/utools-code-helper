@@ -1,7 +1,7 @@
 import React from 'react'
-import Button from '@material-ui/core/Button'
+import Button from '@mui/material/Button'
 import Output from './Components/Output'
-import AutorenewIcon from '@material-ui/icons/Autorenew'
+import AutorenewIcon from '@mui/icons-material/Autorenew'
 
 export default class Uuid extends React.Component {
   constructor (props) {

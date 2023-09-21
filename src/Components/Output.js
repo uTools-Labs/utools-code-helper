@@ -1,13 +1,13 @@
 import React from 'react'
-import Paper from '@material-ui/core/Paper'
-import Tooltip from '@material-ui/core/Tooltip'
-import Button from '@material-ui/core/Button'
-import CopyrightTwoToneIcon from '@material-ui/icons/CopyrightTwoTone'
+import Paper from '@mui/material/Paper'
+import Tooltip from '@mui/material/Tooltip'
+import Button from '@mui/material/Button'
+import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 
 export default class Output extends React.Component {
   handleCopy = () => {
     window.utools.hideMainWindow()
-    window.utools.copyText(this.props.value)
+    window.utools.copyText(String(this.props.value))
   }
 
   shouldComponentUpdate (nextProps) {
@@ -31,15 +31,13 @@ export default class Output extends React.Component {
         {value && (
           <div className='components-output-handle'>
             {
-              index < 10 ? (
-                <Tooltip title='复制' placement='left'>
-                  <Button endIcon={<CopyrightTwoToneIcon />} onClick={this.handleCopy} color='primary' size='small'>
-                    {(window.platform.isMacOs ? '⌘+' : 'Alt+') + index}
-                  </Button>
-                </Tooltip>
-              ) : (
-                <Button onClick={this.handleCopy} color='primary' size='small'>复制</Button>
-              )
+              index < 10
+                ? <Tooltip title='复制' placement='left'>
+                    <Button endIcon={<ContentCopyIcon />} onClick={this.handleCopy} color='primary' size='small'>
+                      {(window.platform.isMacOS ? '⌘+' : 'Alt+') + index}
+                    </Button>
+                  </Tooltip>
+                : <Button onClick={this.handleCopy} color='primary' size='small'>复制</Button>
             }
           </div>)}
       </Paper>

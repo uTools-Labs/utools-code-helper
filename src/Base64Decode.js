@@ -1,7 +1,7 @@
 import React from 'react'
-import TextField from '@material-ui/core/TextField'
-import Tooltip from '@material-ui/core/Tooltip'
-import Paper from '@material-ui/core/Paper'
+import TextField from '@mui/material/TextField'
+import Tooltip from '@mui/material/Tooltip'
+import Paper from '@mui/material/Paper'
 import Output from './Components/Output'
 
 export default class Base64Decode extends React.Component {
@@ -71,15 +71,13 @@ export default class Base64Decode extends React.Component {
           value={input}
         />
         {
-          isBase64Img ? (
-            <Paper className='base64decode-page-img'>
-              <Tooltip title='点击复制图片' placement='top'>
-                <img alt='' draggable='false' onClick={this.handleCopyImg} src={input} />
-              </Tooltip>
-            </Paper>
-          ) : (
-            <Output label='结果' value={result} copyIndex={this.props.copyIndex} index={1} />
-          )
+          isBase64Img
+            ? <Paper className='base64decode-page-img'>
+                <Tooltip title='点击复制图片' placement='top'>
+                  <img alt='' draggable='false' onClick={this.handleCopyImg} src={input} />
+                </Tooltip>
+              </Paper>
+            : <Output label='结果' value={result} copyIndex={this.props.copyIndex} index={1} />
         }
       </div>
     )

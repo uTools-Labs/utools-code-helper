@@ -26,13 +26,8 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: [['@babel/preset-env', { targets: { chrome: 91 } }], '@babel/preset-react'],
-            plugins: [
-              '@babel/plugin-proposal-class-properties',
-              ['import', { libraryName: '@material-ui/core', libraryDirectory: 'esm', camel2DashComponentName: false }, 'core'],
-              ['import', { libraryName: '@material-ui/lab', libraryDirectory: 'esm', camel2DashComponentName: false }, 'lab'],
-              ['import', { libraryName: '@material-ui/icons', libraryDirectory: 'esm', camel2DashComponentName: false }, 'icons']
-            ]
+            presets: [['@babel/preset-env', { targets: { chrome: 100 } }], '@babel/preset-react'],
+            plugins: ['@babel/plugin-proposal-class-properties']
           }
         }
       },

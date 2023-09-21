@@ -1,11 +1,11 @@
 import React from 'react'
-import TextField from '@material-ui/core/TextField'
-import Button from '@material-ui/core/Button'
-import SettingsIcon from '@material-ui/icons/Settings'
-import FormControlLabel from '@material-ui/core/FormControlLabel'
-import Checkbox from '@material-ui/core/Checkbox'
+import TextField from '@mui/material/TextField'
+import Button from '@mui/material/Button'
+import SettingsIcon from '@mui/icons-material/Settings'
+import FormControlLabel from '@mui/material/FormControlLabel'
+import Checkbox from '@mui/material/Checkbox'
 import Output from './Components/Output'
-import Drawer from '@material-ui/core/Drawer'
+import Drawer from '@mui/material/Drawer'
 
 export default class Timestamp extends React.Component {
   timeZone = {
@@ -229,6 +229,7 @@ export default class Timestamp extends React.Component {
       return
     }
     if (/^\d{9,19}$/.test(str)) {
+      // eslint-disable-next-line no-unreachable-loop
       do {
         if (str.length === 10 || str.length === 9) {
           str = parseInt(str) * 1000

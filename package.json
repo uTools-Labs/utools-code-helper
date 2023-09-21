@@ -4,27 +4,33 @@
     "build": "webpack --mode production"
   },
   "dependencies": {
-    "@material-ui/core": "^4.11.4",
-    "@material-ui/icons": "^4.11.2",
-    "@material-ui/lab": "^4.0.0-alpha.58",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "@emotion/react": "^11.10.8",
+    "@emotion/styled": "^11.10.8",
+    "@mui/icons-material": "^5.14.3",
+    "@mui/material": "^5.14.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.14.5",
-    "@babel/core": "^7.14.5",
-    "@babel/plugin-proposal-decorators": "^7.14.5",
-    "@babel/preset-env": "^7.14.5",
-    "@babel/preset-react": "^7.14.5",
-    "babel-loader": "^8.2.2",
-    "babel-plugin-import": "^1.13.3",
-    "copy-webpack-plugin": "^9.0.0",
-    "css-loader": "^5.2.6",
-    "less": "^4.1.1",
-    "less-loader": "^9.1.0",
-    "style-loader": "^2.0.0",
-    "utools-api-types": "^2.0.4",
-    "webpack": "^5.38.1",
-    "webpack-cli": "^4.7.2"
+    "@babel/cli": "^7.22.10",
+    "@babel/core": "^7.22.10",
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/preset-env": "^7.22.10",
+    "@babel/preset-react": "^7.22.5",
+    "babel-loader": "^9.1.3",
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.8.1",
+    "eslint": "^8.47.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-n": "^16.0.2",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.33.2",
+    "less": "^4.2.0",
+    "less-loader": "^11.1.3",
+    "style-loader": "^3.3.3",
+    "utools-api-types": "^4.0.0",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
   }
 }

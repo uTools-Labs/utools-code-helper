@@ -3,12 +3,9 @@ import Output from './Components/Output'
 import DropInput from './Components/DropInput'
 
 export default class base64Encode extends React.Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      result: '',
-      isWebImg: false
-    }
+  state = {
+    result: '',
+    isWebImg: false
   }
 
   componentDidMount () {
