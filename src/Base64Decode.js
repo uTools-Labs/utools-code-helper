@@ -50,9 +50,8 @@ export default class Base64Decode extends React.Component {
     }
   }
 
-  handleCopyImg = () => {
-    window.utools.hideMainWindow()
-    window.utools.copyImage(this.state.input)
+  handleSaveImg = () => {
+    window.services.imageBase64ToFile(this.state.input)
   }
 
   render () {
@@ -73,8 +72,8 @@ export default class Base64Decode extends React.Component {
         {
           isBase64Img
             ? <Paper className='base64decode-page-img'>
-                <Tooltip title='点击复制图片' placement='top'>
-                  <img alt='' draggable='false' onClick={this.handleCopyImg} src={input} />
+                <Tooltip title='点击保存为文件' placement='top'>
+                  <img alt='' draggable='false' onClick={this.handleSaveImg} src={input} />
                 </Tooltip>
               </Paper>
             : <Output label='结果' value={result} copyIndex={this.props.copyIndex} index={1} />

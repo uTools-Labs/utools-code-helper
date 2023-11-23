@@ -56,5 +56,11 @@ window.services = {
   },
   base64Decode: (string) => {
     return Buffer.from(string, 'base64').toString()
+  },
+  imageBase64ToFile: (base64) => {
+    const buffer = Buffer.from(base64.replace(/^data:image\/([a-z]+?);base64,/, ''), 'base64')
+    const outfile = path.join(window.utools.getPath('downloads'), Date.now() + '.' + RegExp.$1)
+    fs.writeFileSync(outfile, buffer)
+    window.utools.shellShowItemInFolder(outfile)
   }
 }
